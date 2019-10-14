@@ -1,16 +1,8 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 
-
-# In[4]:
 
 
 link_list = []
@@ -24,7 +16,6 @@ for i in link_list:
 print('There are '+str(len(link_list)) +' total pages')
 
 
-# In[39]:
 
 
 import time, os
@@ -86,25 +77,25 @@ while continue_while_loop:
 
 
 
-# In[40]:
+
 
 
 print(len(link_list))
 
 
-# In[41]:
+
 
 
 driver.close()
 
 
-# In[43]:
+
 
 
 os.getcwd()
 
 
-# In[44]:
+
 
 
 #store progress in pickle
