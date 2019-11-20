@@ -40,7 +40,7 @@ I started with simple regression model with available numerical and categorical 
 
 Then I _generated month names_ (i.e. January, Feburary etc) and _Days from Listins_ from _Posting Date_. I extracted **Polynomial** features _1/_SQFT_ and _Nearby Public Transition_ (1/X)_ and _square on _Days From Listing__ by observing distributions of numeric features, and run linear regression again. 
 
-Finally, I added *Interaction* features _sqft_x_listingDays_ and _sqft_x_transit_ and passed all to the regression model. 
+Finally, I added **Interaction** features _sqft_x_listingDays_ and _sqft_x_transit_ and passed all to the regression model. 
 
 ## Results 
 
