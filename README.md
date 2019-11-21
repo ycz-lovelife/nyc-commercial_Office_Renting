@@ -59,7 +59,7 @@ To visualize how well the model does, I have created **Actual VS Prediction** (l
 ## Insights
 1. **Square feet** in this case is *not an important factor* on rental prices.
 2. Offices listed in **August** charges the higheest during the year.
-3. If the space have **Common Kitchen**, tends to charges $467 more every month.
+3. If the space have **Common Kitchen**, it tends to charges $467 more every month.
 4. Buildings made of **Glass** or **Concrete**, which are popular in the recent decades, charge lowest rate.
 5. Buildings on **8th Avenue and 23rd St, Manhattan NY** chargest higher than other areas.
 
