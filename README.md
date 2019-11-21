@@ -15,10 +15,10 @@ Description of features collected from scrapping:
 - **Rate** : _[numeric]_ the target that model is predicting (_Y_)
 - **Listing Title** : _[text]_ data with building information
 - **Address** : _[text]_ data with street, city, and zipcode
-- **Posting Date** : _[datetime]_
-- **SqFt** : _[numeric]_
+- **Posting Date** : _[datetime]_ date that listing was posted
+- **SqFt** : _[numeric]_ full square feet for the rental space
 - **Floor Level** : _[numeric]_
-- **Construct Year** : _[numeric]_
+- **Construction Year** : _[numeric]_
 - **Renovation Year** : _[numeric]_
 - **Nearby Public Transition** : _[text]_ Metro station lines and bus stations nearby 
 - **Building Class** : _[category]_ ratings ranges from class A, class B, class C, class D
@@ -38,7 +38,7 @@ Prices listed on 42floors.com varies, including _sqft/mo_, _sqft/yr_, _per month
 ## Feature Engineering & Modeling
 I started with simple regression model with available numerical and categorical features, which can give me a baseline to testify whether additional features engineered bring value to the model. The dataset is split into 60% training, 20% validation, and 20% testing. The first model seems to capture too much noice, so I decided to **remove price outliers**. Unfortunately, the linear regression model returns negative R² on validation data, which means regression should not be linear.
 
-Then I _generated month names_ (i.e. January, Feburary etc) and _Days from Listins_ from _Posting Date_. I extracted **Polynomial** features _1/_SQFT_ and _Nearby Public Transition_ (1/X)_ and _square on _Days From Listing__ by observing distributions of numeric features, and run linear regression again. 
+Then I _generated month names_ (i.e. January, Feburary etc) and _Days from Listins_ from _Posting Date_. I extracted **Inverse** features _1/SQFT_ and _1/Nearby Public Transition_ and **Polynomial** feature _square on _Days From Listing__ by observing distributions of numeric features, and run linear regression again.
 
 Finally, I added **Interaction** features _sqft_x_listingDays_ and _sqft_x_transit_ and passed all to the regression model. 
 
