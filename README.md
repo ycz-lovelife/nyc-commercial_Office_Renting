@@ -46,7 +46,8 @@ Finally, I added *Interaction* features _sqft_x_listingDays_ and _sqft_x_transit
 
 
 ## Results 
-Below is the final R² score of linear regression model after a few rounds of feature engineering. 
+Below is the final R² score of linear regression model after a few rounds of feature engineering. <br>
+
 |   Model    |      R² |
 |------------|---------|
 |Validation  |  0.5227 |
