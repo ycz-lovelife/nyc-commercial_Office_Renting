@@ -1,5 +1,7 @@
 # Predicting NYC Office Rental Price
-I'm interested in building a model to predict how much commercial office costs in New York. To start with, there are a few questions I want to seek answers from the model:
+I'm interested in building a model to predict how much commercial office costs in New York. 
+<br><br>![co-working_space](./images/Co-working.jpg)<br>
+To start with, there are a few questions I want to seek answers from the model:
 
 - Does location really matter?
 - Does the size of the space matter?
@@ -15,10 +17,10 @@ Description of features collected from scrapping:
 - **Rate** : _[numeric]_ the target that model is predicting (_Y_)
 - **Listing Title** : _[text]_ data with building information
 - **Address** : _[text]_ data with street, city, and zipcode
-- **Posting Date** : _[datetime]_ date that listing was posted
-- **SqFt** : _[numeric]_ full square feet for the rental space
+- **Posting Date** : _[datetime]_
+- **SqFt** : _[numeric]_
 - **Floor Level** : _[numeric]_
-- **Construction Year** : _[numeric]_
+- **Construct Year** : _[numeric]_
 - **Renovation Year** : _[numeric]_
 - **Nearby Public Transition** : _[text]_ Metro station lines and bus stations nearby 
 - **Building Class** : _[category]_ ratings ranges from class A, class B, class C, class D
@@ -38,14 +40,34 @@ Prices listed on 42floors.com varies, including _sqft/mo_, _sqft/yr_, _per month
 ## Feature Engineering & Modeling
 I started with simple regression model with available numerical and categorical features, which can give me a baseline to testify whether additional features engineered bring value to the model. The dataset is split into 60% training, 20% validation, and 20% testing. The first model seems to capture too much noice, so I decided to **remove price outliers**. Unfortunately, the linear regression model returns negative R² on validation data, which means regression should not be linear.
 
-Then I _generated month names_ (i.e. January, Feburary etc) and _Days from Listins_ from _Posting Date_. I extracted **Inverse** features _1/SQFT_ and _1/Nearby Public Transition_ and **Polynomial** feature _square on _Days From Listing__ by observing distributions of numeric features, and run linear regression again.
+Then I _generated month names_ (i.e. January, Feburary etc) and _Days from Listings_ from _Posting Date_. I extracted **Inverse** features _1/SQFT_ and _1/Nearby Public Transition_ and **Polynomial** feature _square on _Days From Listing__ by observing distributions of numeric features, and run linear regression again. 
 
-Finally, I added **Interaction** features _sqft_x_listingDays_ and _sqft_x_transit_ and passed all to the regression model. 
+Finally, I added *Interaction* features _sqft_x_listingDays_ and _sqft_x_transit_ and passed all to the regression model. 
+
 
 ## Results 
-
+Below is the final R² score of linear regression model after a few rounds of feature engineering. 
 |   Model    |      R² |
 |------------|---------|
 |Validation  |  0.5227 |
 |   Test     |  0.5082 |
 
+To visualize how well the model does, I have created **Actual VS Prediction** (left) and **Residual** plot (right). Since the input has been scaled, axises do not reflect the original price range. <br><br>
+![results](./images/residual_prediction_combined.PNG) 
+
+## Insights
+1. **Square feet** in this case is *not an important factor* on rental prices.
+2. Offices listed in **August** charges the higheest during the year.
+3. If the space have **Common Kitchen**, tends to charges $467 more every month.
+4. Buildings made of **Glass** or **Concrete**, which are popular in the recent decades, charge lowest rate.
+5. Buildings on **8th Avenue and 23rd St, Manhattan NY** chargest higher than other areas.
+
+
+## Next Step
+Some additional features may have great contribution into the model. <br> 
+For example:
+- How many restaurants/Cafe/shops are nearby in walking distance?
+- Is onsite parking available? For what rate?
+- Any late fees for delayed payments?
+- What's the building renewal policy? Is subleasing allowed?
+- Does building provide general maintenance?
