@@ -20,7 +20,7 @@ Description of features collected from scrapping:
 - **Posting Date** : _[datetime]_
 - **SqFt** : _[numeric]_
 - **Floor Level** : _[numeric]_
-- **Construct Year** : _[numeric]_
+- **Construction Year** : _[numeric]_
 - **Renovation Year** : _[numeric]_
 - **Nearby Public Transition** : _[text]_ Metro station lines and bus stations nearby 
 - **Building Class** : _[category]_ ratings ranges from class A, class B, class C, class D
@@ -65,7 +65,7 @@ To visualize how well the model does, I have created **Actual VS Prediction** (l
 
 
 ## Next Step
-Some additional features may have great contribution into the model. <br> 
+Some additional features may have great contribution to the model. <br> 
 For example:
 - How many restaurants/Cafe/shops are nearby in walking distance?
 - Is onsite parking available? For what rate?
