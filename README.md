@@ -9,7 +9,7 @@ To start with, there are a few questions I want to seek answers from the model:
 - Will available amenities onsite, such as common kitechen and 24/7 security, increase the price?
 
 ## Data Collection & Pre-Processing
-I scraped available commercial office listins from [42floors.com](https://42floors.com/us/ny/new-york) using **Selenium** and **BeautifulSoup**, and got 3532 results back. Web scraping pipeline can be found in [pull-list-of-links.ipynb](./code/1-pull-list-of-links.ipynb) and [scrape-data-from-link-linst.ipynb](./code/2-scrape-data-from-link-lists.ipynb).
+I scraped available commercial office listings from [42floors.com](https://42floors.com/us/ny/new-york) using **Selenium** and **BeautifulSoup**, and got 3532 results back. Web scraping pipeline can be found in [pull-list-of-links.ipynb](./code/1-pull-list-of-links.ipynb) and [scrape-data-from-link-linst.ipynb](./code/2-scrape-data-from-link-lists.ipynb).
 
 Since listings are updated everyday, this is the highest number of unique listings I could get. Half of the listings do not have a listing price, which is the target that the model is predicting, I ended up with 1760 valid observations. Even though the final dataset is not huge,it is still statistically sufficient to capture representative regression patterns. <br>
 
