@@ -15,7 +15,7 @@ Since listings are updated everyday, this is the highest number of unique listin
 
 Description of features collected from scrapping:
 - **Rate** : _[numeric]_ the target that model is predicting (_Y_)
-- **Listing Title** : _[text]_ data with building information
+- **Listing Title** : _[text]_ building information (E.g. Club Row Building) or street name (E.g 243 W 30th St)
 - **Address** : _[text]_ data with street, city, and zipcode
 - **Posting Date** : _[datetime]_
 - **SqFt** : _[numeric]_
